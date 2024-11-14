@@ -21,11 +21,18 @@ class App:
 
     # 1. Verifica si una lista contiene un número primo
     def contiene_numero_primo(lista):
+        par_existe = False
         """
         Verifica si hay al menos un número primo en la lista.
         Retorna True si hay un número primo, de lo contrario, False.
         """
-        pass
+        for numero in lista:
+            if(numero%2 == 0):
+                par_existe = True
+            
+        return par_existe    
+            
+        
 
     # 2. Cuenta los números pares en un rango dado
     def contar_pares(inicio, fin):
