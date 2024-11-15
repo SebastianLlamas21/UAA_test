@@ -43,14 +43,17 @@ class App:
         Cuenta la cantidad de números pares en el rango desde 'inicio' hasta 'fin' (inclusive).
         Retorna la cantidad de números pares.
         """
+        cantidad_pares = 0
         if(inicio != fin):
-            cantidad_pares = 0
             for numero in range(inicio, fin + 1):
                 if(numero % 2 == 0):
                     cantidad_pares += 1
             return cantidad_pares
-        else:
-            return 0
+        elif(inicio == fin):
+            if(inicio % 2 == 0):
+                cantidad_pares = 1
+        
+        return cantidad_pares
         
 
     # 3. Encuentra el número máximo en una lista que sea múltiplo de un valor dado
@@ -80,14 +83,12 @@ class App:
         """
         Calcula y retorna la suma de los primeros 'n' números impares.
         """
-        if(numero > 0):
-            suma = 0
-            for n in range (1, numero):
-                if(n%2 != 0):
-                    suma += n
-            return suma     
-        else:
-            return 0  
+        suma = 0
+        contador = 1
+        while contador <= numero:
+            suma += contador * 2 - 1
+            contador += 1
+        return suma
                        
 
     # 6. Verifica si todos los elementos de una lista son únicos
